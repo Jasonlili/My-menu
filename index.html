@@ -1,39 +1,39 @@
-<!DOCTYPE html>   < !DOCTYPE html>   < !DOCTYPE html>   < !DOCTYPE html>   < !DOCTYPE html>   < !DOCTYPE html>   < !DOCTYPE html>   < !DOCTYPE html>   < !DOCTYPE html>   < !DOCTYPE html>   < !DOCTYPE html>   < !DOCTYPE html>
-<   超文本标记语言   超文本标记语言   超文本标记语言html lang   朗   朗   朗   朗   朗   朗   朗   朗   朗   朗   朗="zh-CN"   "zh-CN"   "zh-CN"   "zh-CN"   "zh-CN"   "zh-CN"   "zh-CN"   "zh-CN"   "zh-CN">   "zh-CN"   "zh-CN"   "zh-CN"
-<   头   头head   头   头   头   头   头   头   头>
-    <   元   元   元meta charset   字符集   字符集   字符集   字符集   字符集   字符集   字符集   字符集   字符集   字符集   字符集="UTF-8"   "UTF-8"   "UTF-8"   "UTF-8"   "UTF-8"   "UTF-8"   "UTF-8"   "UTF-8"   "UTF-8">   "UTF-8"   "UTF-8"   "UTF-8"
-    <   元   元   元meta name   名字   名字   名字   名字   名字   名字   名字   名字   名字   名字   名字="viewport"   "viewport"   "viewport"   "viewport"   "viewport"   "viewport"   "viewport"   "viewport"   "viewport"   "viewport"   "viewport"   "viewport" content="width=device-width, initial-scale=1.0">
-    <   标题   标题title   标题   标题   标题   标题   标题   标题   标题>🎀 家庭实时点餐系统 🎀</   & lt;title   标题>   & lt;
-    <   脚本   脚本   脚本script src="https://unpkg.com/vue@3/dist/vue.global.js"“https://unpkg.com/vue@3 dist / vue.global.js"“https:“https://unpkg.com/vue@3 dist / vue.global.js"//unpkg.com/vue@3 dist / vue.global.js"“https:“https://unpkg.com/vue@3 dist / vue.global.js"//unpkg.com/vue@3 dist / vue.global.js"“https://unpkg.com/vue@3 dist / vue.global.js">   脚本</   & lt;“https://unpkg.com/vue@3 dist / vue.global.js"script>
-    <   风格   风格style   风格   风格   风格   风格   风格   风格   风格>
-        :root   根   根   根   根   根   根   根 {
-            --primary-color   ——的原色   ——的原色   ——的原色   ——的原色   ——的原色   ——的原色   ——的原色: #FFC0CB;
-            --primary-dark   ——primary-dark   ——primary-dark   ——primary-dark   ——primary-dark   ——primary-dark   ——primary-dark   ——primary-dark: #FF69B4;
-            --bg-color   ——bg-color   ——bg-color   ——bg-color   ——bg-color   ——bg-color   ——bg-color   ——bg-color: #FFF5F7;
-            --card-bg   ——card-bg   ——card-bg   ——card-bg   ——card-bg   ——card-bg   ——card-bg   ——card-bg: #FFFFFF;
-            --text-main   ——text-main: #5C5C5C;
-            --border-radius   ——这个特性: 24px;
-            --shadow   ——影子: 0 10px 25px rgba(255, 182, 193, 0.3);
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎀 家庭实时点餐系统 🎀</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        :root {
+            --primary-color: #FFC0CB;
+            --primary-dark: #FF69B4;
+            --bg-color: #FFF5F7;
+            --card-bg: #FFFFFF;
+            --text-main: #5C5C5C;
+            --border-radius: 24px;
+            --shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
         }
 
-        * { box-sizing: border-box; margin   保证金   保证金: 0; padding   填充: 0; }
-        body   身体 { font-family   字体类型   字体类型   字体类型: -apple-system   苹果系统, sans-serif; background-color   背景颜色   背景颜色: var   ——bg-color(--bg-color   ——bg-color   ——bg-color); color   颜色   颜色: var(--text-main   ——text-main); }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, sans-serif; background-color: var(--bg-color); color: var(--text-main); }
 
         /* 加载动画 */
         .loading-overlay {
-            position   位置   位置: fixed   固定   固定   固定; top   前   前: 0; left   左: 0; width   宽度: 100%; height   高度: 100%;
-            background   背景: rgba(255, 255, 255, 0.8);
-            display   显示: flex; flex-direction: column   列; justify-content: center   中心; align-items   对齐项目: center   中心;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
             z-index: 2000;
         }
         .spinner {
-            width   宽度   宽度: 40px; height   高度   高度: 40px; border: 4px solid var   ——的原色   ——的原色   ——的原色(--primary-color   ——的原色   ——的原色   ——的原色   ——的原色);
-            border-top: 4px solid var(      ——primary-dark——primary-dark--primary-dark); border-radius: 50%;
+            width: 40px; height: 40px; border: 4px solid var(--primary-color);
+            border-top: 4px solid var(--primary-dark); border-radius: 50%;
             animation: spin 1s linear infinite;
         }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        .app-container { max-width: 1200px; margin   保证金: 0 auto; padding   填充: 20px; }
+        .app-container { max-width: 1200px; margin: 0 auto; padding: 20px; }．App-container {max-width: 1200px；Margin: 0 auto；填充:20 px;｝
         
         /* 状态条 */
         .status-bar {
@@ -275,7 +275,7 @@
                         qty: 1,
                         addedBy: userName.value
                     });
-                }
+                   < !DOCTYPE html   超文本标记语言>}
             };
 
             const updateQty = async (cartId, delta) => {
@@ -290,48 +290,48 @@
 
             // --- 图片压缩处理 ---
             const handleFileUpload = (e) => {
-                const file = e.target.files[0];
-                const reader = new FileReader();
-                reader.onload = (ev) => {
-                    const img = new Image();
-                    img.onload = () => {
-                        const canvas = document.createElement('canvas');
-                        const ctx = canvas.getContext('2d');
+                const file = e.target.files[0];Const file = e.target.files[0]；
+                const reader = new FileReader();const   常量 reader = new FileReader()；
+                reader.onload = (ev) => {   非常感谢。负载= (ev) => {
+                    const img = new Image();   const   常量 img = new Image()；
+                    img.onload = () => {   img。Onload = () => {
+                        const canvas = document.createElement('canvas');const   常量 canvas = document.createElement('canvas')；
+                        const ctx = canvas.getContext('2d');const   常量 ctx = canvas.getContext('2d')；
                         const MAX_W = 300; // 进一步压缩以适配云端存储
-                        canvas.width = MAX_W;
-                        canvas.height = img.height * (MAX_W / img.width);
-                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                        form.image = canvas.toDataURL('image/jpeg', 0.6);
+                        canvas.width = MAX_W;   画布。width = MAX_W；
+                        canvas.height = img.height * (MAX_W / img.width);画布。高度= img。height * (MAX_W / image .width   宽度)；
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);ctx。drawImage（img, 0,0, canvas）宽度,canvas.height   高度);
+                        form.image = canvas.toDataURL('image/jpeg', 0.6);的形式。图像=画布。toDataURL(图像/ jpeg, 0.6);
                     };
                     img.src = ev.target.result;
                 };
-                reader.readAsDataURL(file);
+                reader.readAsDataURL(file);reader.readAsDataURL(文件);
             };
 
-            const seedData = async () => {
-                const defaults = [
+            const seedData = async () => {   const   常量 seedData = async   异步 () => {
+                const defaults = [   Const defaults = [
                     { name: '糖醋排骨', price: '45', image: '', createdAt: Date.now() },
                     { name: '清炒时蔬', price: '12', image: '', createdAt: Date.now() - 1000 }
                 ];
-                for (let d of defaults) {
-                    await addDoc(collection(db, "dishes"), d);
+                for (let d of defaults) {   For (let d of defaults) {
+                    await addDoc(collection(db, "dishes"), d);等待addDoc(collection（db, "；菜品"；）， d)；
                 }
             };
 
-            const totalAmount = computed(() => {
-                const total = cart.value.reduce((acc, cur) => {
-                    const price = parseFloat(cur.price.replace(/[^\d.]/g, '')) || 0;
-                    return acc + (price * cur.qty);
+            const totalAmount = computed(() => {const totalAmount = computed(() => {
+                const total = cart.value.reduce((acc, cur) => {Const total = cart.value。Reduce ((acc, cur) => {
+                    const price = parseFloat(cur.price.replace(/[^\d.]/g, '')) || 0;const price = parseFloat(cur.price.replace(/[^\d.]/g, ")) || 0；
+                    return acc + (price * cur.qty);返回acc (price * cur.qty)；
                 }, 0);
-                return total === 0 ? '--' : total.toFixed(1);
+                return total === 0 ? '--' : total.toFixed(1);返回total === 0 ？‘——’：total.toFixed(1)；
             });
 
-            return {
-                dishes, cart, loading, showModal, isEdit, form, userName, totalAmount,
+            return {   返回{
+                dishes, cart, loading, showModal, isEdit, form, userName, totalAmount,菜品、购物车、加载、showModal、isEdit、表单、userName、totalAmount、
                 openModal, submitForm, handleDelete, addToCart, updateQty, handleFileUpload
             };
         }
-    }).mount('#app');
-</script>
-</body>
-</html>
+    }).mount('#app');   }) .mount(“#应用”);
+</script>   < / script>
+</body>   < / body>
+</html   超文本标记语言>   & lt;   < / html>
